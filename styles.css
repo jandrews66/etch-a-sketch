@@ -1,0 +1,45 @@
+#container {
+    max-width: 660px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+h1 {
+    align-self: center;
+}
+.column {
+    display: flex;
+}
+
+
+.square {
+    outline: 1px solid black;
+    aspect-ratio: auto 1 / 1;
+    display: flex;
+    flex: 1;
+
+}
+    
+.rangeslider {
+    width: 50%;
+    }
+
+.myslider {
+    -webkit-appearance: none;
+    background: #83c9ff6b  ;
+    width: 50%;
+    height: 20px;
+    opacity: 2;
+   }
+
+.myslider:hover {
+    opacity: 1;
+}
+
+.myslider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    cursor: pointer;
+    background: #34495E  ;
+    width: 5%;
+    height: 20px;
+}
