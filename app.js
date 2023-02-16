@@ -1,6 +1,8 @@
 const container = document.querySelector('#container');
 
-function createGrid() {
+createGrid(16);
+
+function createGrid(num) {
 
     if (document.getElementById("column")) {
         deleteGrid();
@@ -33,12 +35,12 @@ function deleteGrid () {
 
 const rangeslider = document.getElementById("sliderRange");
 const output = document.getElementById("demo");
-output.innerHTML = rangeslider.value;
+output.innerHTML = rangeslider.value + "x" + rangeslider.value;
 
 rangeslider.oninput = function() {
-  output.innerHTML = this.value;
+  output.innerHTML = this.value + "x" + this.value;
   num = this.value;
-  createGrid();
+  createGrid(num);
 }
 
 function colorSquares () {
@@ -47,6 +49,23 @@ function colorSquares () {
     const setColor = e => {
         const selection = e.target;
         selection.setAttribute("style", "background-color:blue;")
+    }
+
+    for (let square of squares) {
+        square.addEventListener("mouseover", setColor);
+    }
+}
+
+const button = document.getElementById("Rainbow");
+button.addEventListener("click", rainbowSquares);
+
+function rainbowSquares () {
+    const squares = document.getElementsByClassName("square");
+
+    const setColor = e => {
+        const selection = e.target;
+        const randomColor = Math.floor(Math.random()*16777215).toString(16);
+        selection.setAttribute("style", "background-color:#"+randomColor)
     }
 
     for (let square of squares) {

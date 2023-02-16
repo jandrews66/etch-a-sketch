@@ -1,3 +1,7 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 #container {
     max-width: 660px;
     margin: 0 auto;
@@ -6,6 +10,12 @@
 }
 h1 {
     align-self: center;
+}
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
 }
 .column {
     display: flex;
@@ -22,13 +32,14 @@ h1 {
     
 .rangeslider {
     width: 50%;
+    margin: 20px 0px;
     }
 
 .myslider {
     -webkit-appearance: none;
-    background: #83c9ff6b  ;
+    background: #3f5e756b  ;
     width: 50%;
-    height: 20px;
+    height: 12px;
     opacity: 2;
    }
 
@@ -40,6 +51,16 @@ h1 {
     -webkit-appearance: none;
     cursor: pointer;
     background: #34495E  ;
-    width: 5%;
+    width: 10%;
     height: 20px;
+}
+
+button {
+    background-image: linear-gradient(to right, rgb(255, 59, 59),rgb(255, 222, 76),rgb(80, 255, 138),rgb(211, 73, 211), rgb(78, 78, 255));
+    height: 30px;
+    width: 100px;
+    margin: 20px 0px;
+    border-radius: 6px;
+    border: 2px solid rgb(220, 220, 248);
+    font-weight: 500;
 }
