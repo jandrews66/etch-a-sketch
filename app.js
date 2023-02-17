@@ -1,4 +1,4 @@
-const container = document.querySelector('#container');
+const container = document.querySelector('#grid_container');
 
 createGrid(16);
 
@@ -22,7 +22,7 @@ function createGrid(num) {
         column.appendChild(square);
         }
     }
-    colorSquares();
+    blackSquares();
 }
 
 function deleteGrid () {
@@ -43,12 +43,12 @@ rangeslider.oninput = function() {
   createGrid(num);
 }
 
-function colorSquares () {
+function blackSquares () {
     const squares = document.getElementsByClassName("square");
 
     const setColor = e => {
         const selection = e.target;
-        selection.setAttribute("style", "background-color:blue;")
+        selection.setAttribute("style", "background-color:black;")
     }
 
     for (let square of squares) {
@@ -56,8 +56,14 @@ function colorSquares () {
     }
 }
 
-const button = document.getElementById("Rainbow");
-button.addEventListener("click", rainbowSquares);
+const rainbowBtn = document.getElementById("rainbowBtn");
+rainbowBtn.addEventListener("click", () => {
+    rainbowSquares(); 
+    //swapBtn();
+});
+
+const blackBtn = document.getElementById("blackBtn")
+blackBtn.addEventListener("click", blackSquares);
 
 function rainbowSquares () {
     const squares = document.getElementsByClassName("square");
@@ -72,3 +78,10 @@ function rainbowSquares () {
         square.addEventListener("mouseover", setColor);
     }
 }
+
+
+
+// function swapBtn () {
+//     document.getElementById("Rainbow").style.visibility = 'hidden';
+
+// }
